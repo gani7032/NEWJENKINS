@@ -19,7 +19,7 @@ pipeline {
                 // Builds a Docker image from Dockerfile
                 script {
                     docker.build(env.DOCKER_IMAGE)
-}
+                }
             }
         }
 
@@ -35,3 +35,8 @@ pipeline {
                     sh "docker run -d --name django-app -p 8000:8000 ${env.DOCKER_IMAGE}"
                 }
             }
+        }
+    }
+}
+
+       
